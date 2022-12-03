@@ -29,10 +29,10 @@ public class Service implements IService {
 
     @Override
     public Integer getHashCode(User user) {
-        if (ObjectUtil.isEmpty(user)){
-            return null;
+        if (ObjectUtil.isAllNotEmpty(user, user.getUsername(), user.getPassword())){
+            return user.hashCode();
         }
-        return user.hashCode();
+        return null;
     }
 
     /**

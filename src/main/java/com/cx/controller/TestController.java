@@ -75,7 +75,7 @@ public class TestController {
         log.info("user");
         Integer hashCode = service.getHashCode(user);
         service.logHashCode(hashCode);
-        return R.ok(user);
+        return R.ok(hashCode);
     }
 
     /**

@@ -1,22 +1,15 @@
 package com.cx.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import com.cx.common.PageUtils;
 import com.cx.common.R;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.cx.entity.EmpEntity;
+import com.cx.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cx.entity.EmpEntity;
-import com.cx.service.EmpService;
-import com.common.utils.PageUtils;
-import com.common.utils.R;
+import java.util.Arrays;
 
 
 
@@ -28,7 +21,7 @@ import com.common.utils.R;
  * @date 2022-12-03 22:59:04
  */
 @RestController
-@RequestMapping("cx/emp")
+@RequestMapping("/emp")
 public class EmpController {
     @Autowired
     private EmpService empService;
