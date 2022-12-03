@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
     <!-- 自定义参数监听 -->
-    <contextListener class="org.springblade.core.log.listener.LoggerStartupListener"/>
+<!--    <contextListener class="org.springblade.core.log.listener.LoggerStartupListener"/>-->
     <springProperty scope="context" name="springAppName" source="spring.application.name"/>
 
     <!-- 彩色日志依赖的渲染类 -->
@@ -61,9 +61,8 @@
     <!-- 日志输出级别 -->
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="${STDOUT_APPENDER}"/>
-        <appender-ref ref="${INFO_APPENDER}"/>
-        <appender-ref ref="${ERROR_APPENDER}"/>
+        <appender-ref ref="INFO"/>
+        <appender-ref ref="ERROR"/>
     </root>
 
     <!-- MyBatis log configure -->
