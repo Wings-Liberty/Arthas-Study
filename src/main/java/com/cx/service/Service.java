@@ -13,14 +13,11 @@ public class Service implements IService {
 
     private static final String SERVICE_NAME = "arthas-test-service";
 
+    /**
+     * 如果是 private，arthas 就不能直接用 . 访问属性
+     */
     @Value("${hello}")
-    private String hello;
-
-    @Override
-    @Async("asyncExecutor")
-    public void hello() {
-        log.info("hello");
-    }
+    public String hello;
 
     @Override
     public void throwException() {

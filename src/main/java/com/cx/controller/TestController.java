@@ -5,6 +5,7 @@ import cn.hutool.core.util.ObjectUtil;
 import com.cx.bean.entity.User;
 import com.cx.common.R;
 import com.cx.service.IService;
+import com.cx.util.TestUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -91,6 +92,20 @@ public class TestController {
         String filename = file.getOriginalFilename();
         log.info("file name is {}", filename);
         return R.ok(filename);
+    }
+
+    @GetMapping("/util/test")
+    public R echoUtilTest(){
+        String test = TestUtil.test();
+        log.info("TestUtil name is {}", test);
+        return R.ok(test);
+    }
+
+    @PostMapping("/util/user")
+    public R echoUtilUser(@RequestBody User user){
+        User echoUser = TestUtil.echoUser(user);
+        log.info("TestUtil user is {}", user);
+        return R.ok(echoUser);
     }
 
 }
